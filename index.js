@@ -3,13 +3,11 @@
 var window = require('global/window')
 var Event = require('geval')
 
-module.exports = Hashtory()
+module.exports = HashHistory()
 
-function Hashtory (initialHash) {
+function HashHistory () {
   observable.set = set
   var listen = hashChangeEvent()
-
-  if (initialHash) set(initialHash)
 
   return observable
 
