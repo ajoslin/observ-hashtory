@@ -5,9 +5,11 @@ var Event = require('geval')
 
 module.exports = Hashtory()
 
-function Hashtory () {
+function Hashtory (initialHash) {
   observable.set = set
   var listen = hashChangeEvent()
+
+  if (initialHash) set(initialHash)
 
   return observable
 
