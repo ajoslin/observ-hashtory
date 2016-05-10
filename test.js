@@ -19,20 +19,18 @@ test('history (browser)', function (t) {
   t.plan(3)
 
   var window = new EventTarget()
-  window.location = {
-    hash: '#/foo'
-  }
+  window.location = {}
 
   var hashHistory = proxyquire('./', {
     'global/window': window
   })()
 
-  t.equal(hashHistory(), '/foo')
-  hashHistory.set('/bar')
+  t.equal(hashHistory(), '/')
 
+  hashHistory.set('/bar')
   t.equal(hashHistory(), '/bar')
 
-  var unlisten = hashHistory(function (hash) {
+  var unlisten = hashHistory(function onChange (hash) {
     t.equal('/baz', hash)
   })
 
