@@ -1,7 +1,7 @@
 {
   "name": "observ-location-hash",
   "main": "index.js",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Observable interface to the browser hash location",
   "license": "MIT",
   "repository": "ajoslin/observ-location-hash",
