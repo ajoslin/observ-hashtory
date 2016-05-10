@@ -28,6 +28,10 @@ hash.set(path)
 
 ## API
 
+#### `ObservHash([initialHash]) -> `observHash`
+
+Returns an instance of an observHash observable. Optionally pass in an initial value to set the window hash to.
+
 #### `observHash([listener])` -> `function`
 
 Returns an unlisten function.
