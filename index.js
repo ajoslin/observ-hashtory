@@ -3,11 +3,13 @@
 var window = require('global/window')
 var Event = require('geval')
 
-module.exports = Hashtory()
+module.exports = HashHistory
 
-function Hashtory () {
+function HashHistory (initialHash) {
   observable.set = set
   var listen = hashChangeEvent()
+
+  if (initialHash) set(initialHash)
 
   return observable
 
@@ -37,5 +39,11 @@ function set (path) {
 
 function get () {
   if (!window.location) return
-  return (window.location.hash || '').substring(1)
+
+  var path = window.location.hash || ''
+
+  if (path.charAt(0) === '#') path = path.substring(1)
+  if (path.charAt(0) !== '/') path = '/' + path
+
+  return path
 }

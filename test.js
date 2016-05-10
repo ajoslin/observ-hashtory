@@ -8,7 +8,7 @@ var EventTarget = require('dom-event-target')
 test('history (server)', function (t) {
   var hashHistory = proxyquire('./', {
     'global/window': {}
-  })
+  })()
 
   t.doesNotThrow(hashHistory.set, 'pushState is a noop')
   t.doesNotThrow(hashHistory, 'onPopState is a noop')
@@ -19,20 +19,18 @@ test('history (browser)', function (t) {
   t.plan(3)
 
   var window = new EventTarget()
-  window.location = {
-    hash: '#/foo'
-  }
+  window.location = {}
 
   var hashHistory = proxyquire('./', {
     'global/window': window
-  })
+  })()
 
-  t.equal(hashHistory(), '/foo')
+  t.equal(hashHistory(), '/')
+
   hashHistory.set('/bar')
-
   t.equal(hashHistory(), '/bar')
 
-  var unlisten = hashHistory(function (hash) {
+  var unlisten = hashHistory(function onChange (hash) {
     t.equal('/baz', hash)
   })
 
