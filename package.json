@@ -1,0 +1,36 @@
+{
+  "name": "observ-location-hash",
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Observable interface to the browser hash location",
+  "license": "MIT",
+  "repository": "ajoslin/observ-location-hash",
+  "author": {
+    "name": "Andrew Joslin",
+    "email": "andrewtjoslin@gmail.com",
+    "url": "ajoslin.com"
+  },
+  "scripts": {
+    "test": "standard && tape test.js"
+  },
+  "keywords": [
+    "observ",
+    "observable",
+    "history",
+    "hash",
+    "browser"
+  ],
+  "devDependencies": {
+    "dom-event-target": "~1.0.0",
+    "proxyquire": "~1.7.8",
+    "standard": "^6.0.0",
+    "tape": "^4.0.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "dependencies": {
+    "geval": "~2.1.1",
+    "global": "~4.3.0"
+  }
+}
