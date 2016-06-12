@@ -1,6 +1,6 @@
 {
   "name": "observ-location-hash",
-  "main": "index.js",
+ "main": "index.js",
   "version": "1.0.1",
   "description": "Observable interface to the browser hash location",
   "license": "MIT",
@@ -27,7 +27,7 @@
     "tape": "^4.0.0"
   },
   "files": [
-    "index.js"
+    "*.js"
   ],
   "dependencies": {
     "geval": "~2.1.1",
