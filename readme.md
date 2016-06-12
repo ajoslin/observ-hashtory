@@ -11,20 +11,24 @@ $ npm install --save observ-location-hash
 ## Usage
 
 ```js
-var observHash = require('observ-location-hash')
+var ObservHash = require('observ-location-hash')
 
-observHash(function (hash) {
+var hash = ObservHash('/initial-path')
+
+hash(function (hash) {
   //=> (called on window's hashchange event)
 })
 
-observHash()
+hash()
 //=> returns current hash, minus '#' character
 
-observHash.set(path)
+hash.set(path)
 //=> sets current hash
 ```
 
 ## API
+
+#### `ObservHash([initialPath])` -> `observHash`
 
 #### `observHash([listener])` -> `function`
 
